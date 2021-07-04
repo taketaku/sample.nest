@@ -1,5 +1,5 @@
 import { Body } from '@nestjs/common';
-import { Controller, Post } from '@nestjs/common';
+import { Controller, Post, Get } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { CreateCatDto } from './dto/create-cats.dto';
 
@@ -12,8 +12,9 @@ export class CatsController {
     this.catsService.create(createCatDto);
   }
 
-  // @Get()
-  // findAll(): Promise<Cat[]> {
-  //   return this.catsService.findAll();
-  // }
+  @Get()
+  findAll() {
+    // return this.catsService.findAll();
+    return 'All cats';
+  }
 }
